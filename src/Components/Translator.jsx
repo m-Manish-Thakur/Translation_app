@@ -7,29 +7,31 @@ const Translator = () => {
   const [translatedText, setTranslateText] = useState("");
   const [sourceLan, setSourceLan] = useState("en");
   const [targetLan, setTargetLan] = useState("hi");
-  const [isTranslating, setIsTranslating] = useState(false); // Track if a translation is in progress                                                                
+  const [isTranslating, setIsTranslating] = useState(false); // Track if a translation is in progress 
 
   useEffect(() => {
     async function translateText() {
-
-      if (sourceText === '') {
-        setTranslateText('')
+      if (sourceText === "") {
+        setTranslateText("");
         return; // Don't make requests if the sourceText is empty or a translation is already in progress
       }
 
       try {
-        const response = await axios.post("https://libretranslate.de/translate", {
-          q: sourceText,
-          source: sourceLan,
-          target: targetLan,
-          format: "text",
-        });
+        const response = await axios.post(
+          "https://libretranslate.de/translate",
+          {
+            q: sourceText,
+            source: sourceLan,
+            target: targetLan,
+            format: "text",
+          }
+        );
 
         console.log(response.data.translatedText);
         setTranslateText(response.data.translatedText);
       } catch (error) {
         console.error("Translation error:", error);
-      } 
+      }
     }
 
     const delay = 1000; // Adjust the delay as needed (e.g., 1000 ms = 1 request per second)
@@ -37,7 +39,7 @@ const Translator = () => {
 
     return () => clearTimeout(timer); // Clear the timer if the component unmounts or the effect is re-run
   }, [sourceText, sourceLan, targetLan]);
- 
+
   return (
     <>
       <div id="translator">

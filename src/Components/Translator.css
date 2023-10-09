@@ -1,85 +1,103 @@
-#translator{
-    width: 100vw;
-    height: 100vh;
-    background: url('bg.png');
-    background-size: cover;
+#translator {
+  width: 100vw;
+  min-height: 100vh;
+  background: rgb(41, 45, 64);
+  background-size: cover;
 }
-#translator header{
-    padding: 12px 5vw;
-    text-align: center;
-    background: rgba( 255, 255, 255, 0.1 );
-    backdrop-filter: blur( 10px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+#translator header {
+  padding: 12px 5vw;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-#translator header h2{
-    color: aliceblue;
-    font-weight: bold;
-    font-size: 33px;
+#translator header h2 {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 33px;
 }
 
-#translator .container{
+#translator .container {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+}
+#translator .container .item {
+  width: 450px;
+  height: 380px;
+}
+
+@media screen and (max-width: 600px) {
+  #translator .container {
     display: flex;
-    height: 80vh;
+    flex-direction: column;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    column-gap: 50px;
-}
-#translator .container .item{
-    width: 450px;
+    column-gap: 10px;
+    padding-top: 50px;
+    padding: 10px;
+  }
+  #translator .container .item {
+    width: 100%;
     height: 380px;
+  }
 }
-#translator .container .item textarea{
-    width: 100%;
-    border: none;
-    background: rgba(25, 35, 56, 0.79);
-    backdrop-filter: blur( 15.5px );
-    -webkit-backdrop-filter: blur( 15.5px );
-    border-radius: 10px;
-    border: 5px solid royalblue;
-    outline: none;
-    margin-top: 25px;
-    padding: 10px;
-    font-size: 18px;
-    letter-spacing: 0.3px;
-    color: aliceblue;
+
+#translator .container .item textarea {
+  width: 100%;
+  border: none;
+  background: rgba(25, 35, 56, 0.79);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 5px solid royalblue;
+  outline: none;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: aliceblue;
 }
-#translator .container .item .translatedText{
-    width: 100%;
-    border: none;
-    background: rgba(25, 35, 56, 0.79);
-    backdrop-filter: blur( 15.5px );
-    -webkit-backdrop-filter: blur( 15.5px );
-    border-radius: 10px;
-    border: 5px solid royalblue;
-    outline: none;
-    margin-top: 25px;
-    padding: 10px;
-    font-size: 18px;
-    letter-spacing: 0.3px;
-    color: aliceblue;
-    height: 270px;
+#translator .container .item .translatedText {
+  width: 100%;
+  border: none;
+  background: rgba(25, 35, 56, 0.79);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 5px solid royalblue;
+  outline: none;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: aliceblue;
+  height: 270px;
 }
-#translator .container .item select{
-    width: 100%;
-    padding: 10px;
-    background: rgba( 255, 255, 255, 0.1 );
-    backdrop-filter: blur( 15.5px );
-    -webkit-backdrop-filter: blur( 15.5px );
-    border-radius: 20px;
-    border: 2px solid rgba( 255, 255, 255, 0.18 );
-    color: aliceblue;
-    outline: none;
-    letter-spacing: 0.5px;
-    font-size: 17px;
+#translator .container .item select {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  color: aliceblue;
+  outline: none;
+  letter-spacing: 0.5px;
+  font-size: 17px;
 }
 
 /* Style the select options */
 select option {
-    background-color: rgb(41, 45, 64);
-    border-radius: 10px;
-    color: rgb(255, 255, 255); 
-    padding: 10px;
-    font-size: 16px;
+  background-color: rgb(41, 45, 64);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 16px;
 }
 
 /* Style the placeholder text */
